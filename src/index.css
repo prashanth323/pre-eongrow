@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #121413;
+  --color-brand-primary: #171C19;
+  --color-brand-accent: #2C3430;
+  --color-brand-surface: #F0F2F1;
+  --color-bg-main: #F5F6F5;
+  --color-bg-card: #FFFFFF;
+  --color-text-main: #171C19;
+  --color-text-muted: #818A84;
+  --color-border-subtle: #E8ECE9;
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Inter", -apple-system, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border-subtle);
+  }
+  
+  body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    letter-spacing: -0.006em;
+  }
+
+  /* Apple UI Typography Scale (WWDC: Thin, Airy & Optical Tracking Headings) */
+  h1, h2, h3, h4, h5, .heading-thin {
+    font-weight: 300;
+  }
+
+  h1 {
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    font-weight: 200;
+  }
+  
+  h2 {
+    letter-spacing: -0.028em;
+    line-height: 1.15;
+    font-weight: 300;
+  }
+
+  h3 {
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    font-weight: 300;
+  }
+
+  h4 {
+    letter-spacing: -0.012em;
+    line-height: 1.35;
+    font-weight: 400;
+  }
+
+  h5 {
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+}
+
+/* Apple Design Utilities & Materials */
+@layer utilities {
+  /* 1. Response & Fluid Springs (WWDC 2018: Designing Fluid Interfaces) */
+  .apple-press {
+    transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), opacity 120ms ease;
+  }
+  .apple-press:active {
+    transform: scale(0.97);
+  }
+
+  /* 2. Apple Card Surface & Bento Depth */
+  .apple-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 6px 16px -2px rgba(0, 0, 0, 0.03);
+    border-radius: 24px;
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms ease;
+  }
+  .apple-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05), 0 16px 32px -4px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.18);
+  }
+
+  /* 3. Translucent Materials (WWDC: Materiality & Depth with backdrop-filter) */
+  .apple-glass {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  .apple-glass-dark {
+    background: rgba(18, 20, 19, 0.88);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  /* 4. Apple Segmented Control Pill Container */
+  .apple-segment-track {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 3px;
+    border-radius: 9999px;
+  }
+  .apple-segment-thumb {
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.04);
+    border-radius: 9999px;
+  }
+
+  /* Legacy utility alias compatibility */
+  .tap-press {
+    transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .tap-press:active {
+    transform: scale(0.97);
+  }
+
+  .card-lift {
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05), 0 16px 32px -4px rgba(7, 88, 63, 0.06);
+  }
+
+  .subtle-mesh {
+    background-color: var(--color-bg-main);
+  }
+
+  /* Apple Blur Word-by-Word Animation */
+  @keyframes blurInWord {
+    0% {
+      opacity: 0;
+      filter: blur(14px);
+      transform: translateY(18px) scale(0.97);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-blur-word {
+    animation: blurInWord 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+    will-change: transform, opacity, filter;
+    display: inline-block;
+  }
+
+  /* Bento container entrance delayed after hero text */
+  @keyframes bentoSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(32px) scale(0.985);
+      filter: blur(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+    }
+  }
+
+  .animate-bento-entrance {
+    animation: bentoSlideIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.82s both;
+    will-change: transform, opacity, filter;
+  }
+}
+
+/* Reduced Motion & Reduced Transparency Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .apple-press:active, .tap-press:active, .apple-card:hover, .card-lift:hover {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .apple-glass {
+    background: #FFFFFF !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .apple-glass-dark {
+    background: #121413 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* Minimal subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D8D3;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0ABA3;
+}

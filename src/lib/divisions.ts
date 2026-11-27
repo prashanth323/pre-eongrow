@@ -1,0 +1,467 @@
+import type { DivisionMeta, DivisionSlug } from '../types/app.types';
+
+export const DIVISIONS_CATALOG: Record<DivisionSlug, DivisionMeta> = {
+  student: {
+    id: 'div_student',
+    slug: 'student',
+    name: 'Student Network',
+    tagline: 'Learn, Connect & Launch Your Future',
+    description: 'A completely free community for college students and graduates to discover internships, hackathons, mentorship, and entry-level career opportunities.',
+    iconName: 'GraduationCap',
+    badge: '100% Free Access',
+    colorHex: '#171C19',
+    isFreeOnly: true,
+    features: [
+      'Zero Membership Cost — Always Free',
+      'Exclusive Internship & Campus Job Board',
+      'Hackathons, Workshops & Student Meetups',
+      '1-on-1 Mentorship from Industry Seniors',
+      'Peer Collaboration & Student Community',
+      'Digital Event Tickets & QR Access',
+    ],
+  },
+  career: {
+    id: 'div_career',
+    slug: 'career',
+    name: 'Career & Professional Network',
+    tagline: 'Advance Your Career & Build Executive Presence',
+    description: 'For working professionals seeking lateral growth, high-impact job opportunities, executive networking, and leadership mentorship.',
+    iconName: 'Briefcase',
+    badge: 'Professional',
+    colorHex: '#1F2421',
+    isFreeOnly: false,
+    features: [
+      'Verified Professional Directory',
+      'Confidential Job Referrals & Hiring Intros',
+      'Executive Leadership Masterclasses',
+      'Cross-Industry Networking Circles',
+      'Skills Verification & Endorsement',
+      'Annual Leadership Summits',
+    ],
+  },
+  freelancer: {
+    id: 'div_freelancer',
+    slug: 'freelancer',
+    name: 'Freelancer & Creator Network',
+    tagline: 'Showcase Talent & Win High-Value Clients',
+    description: 'For designers, developers, writers, marketers, and creative freelancers looking to showcase portfolios, find gigs, and collaborate.',
+    iconName: 'Palette',
+    badge: 'Creative & Tech',
+    colorHex: '#252926',
+    isFreeOnly: false,
+    features: [
+      'Interactive Portfolio & Case Study Showcase',
+      'Direct Business Enquiries & Inbound Leads',
+      'Client Escrow & Safe Contract Templates',
+      'Freelance Collaboration & Squad Formation',
+      'Rate Benchmark & Proposal Guides',
+      'Creator Meetups & Design Sprints',
+    ],
+  },
+  entrepreneur: {
+    id: 'div_entrepreneur',
+    slug: 'entrepreneur',
+    name: 'Entrepreneur & Startup Network',
+    tagline: 'Build Scalable Companies & Find Co-Founders',
+    description: 'For startup founders, co-founders, and early-stage builders seeking technical partners, acceleration mentors, and venture capital.',
+    iconName: 'Rocket',
+    badge: 'Venture & Growth',
+    colorHex: '#1E2328',
+    isFreeOnly: false,
+    features: [
+      'Smart Co-Founder Matching Engine',
+      'Investor Pitch Days & Demo Sessions',
+      'Verified Angel & VC Investor Directory',
+      'Startup Perks & Cloud Credits Worth $50k+',
+      'Legal & Incorporation Support Network',
+      'Quarterly Founder Retreats & Summits',
+    ],
+  },
+  business: {
+    id: 'div_business',
+    slug: 'business',
+    name: 'Business Owners Network',
+    tagline: 'Scale B2B Partnerships & Supply Chains',
+    description: 'For MSME leaders, enterprise executives, and business owners looking for verified vendors, strategic buyers, distributors, and B2B alliances.',
+    iconName: 'Building2',
+    badge: 'Enterprise & B2B',
+    colorHex: '#1B1E22',
+    isFreeOnly: false,
+    features: [
+      'Verified B2B Buyer & Supplier Directory',
+      'Tender & Business Requirement Board',
+      'Warm Introductions via Chapter Managers',
+      'Commercial Vendor & Trade Alliances',
+      'Cross-City Business delegations',
+      'High-Value Exhibition & Expo Access',
+    ],
+  },
+  influencer: {
+    id: 'div_influencer',
+    slug: 'influencer',
+    name: 'Influencers & Media Network',
+    tagline: 'Monetize Influence & Direct Brand Campaigns',
+    description: 'For digital content creators, media influencers, and press professionals connecting with brand sponsors and PR agencies.',
+    iconName: 'Sparkles',
+    badge: 'Media & Brands',
+    colorHex: '#262226',
+    isFreeOnly: false,
+    features: [
+      'Direct Brand Campaign Briefs & Deals',
+      'Verified Media Kit & Analytics Badge',
+      'Cross-Creator Collaborations',
+      'PR Agency & Brand Manager Network',
+      'Media Law, IP & Contract Advisory',
+      'Annual Influencer Gala & Awards',
+    ],
+  },
+  investor: {
+    id: 'div_investor',
+    slug: 'investor',
+    name: 'Investors & Strategic Network',
+    tagline: 'Curated Deal Flow & Syndicated Co-Investments',
+    description: 'For angel investors, family offices, VCs, and strategic advisors seeking vetted deal flow, due diligence, and high-growth opportunities.',
+    iconName: 'TrendingUp',
+    badge: 'Private & Vetted',
+    colorHex: '#1C201E',
+    isFreeOnly: false,
+    features: [
+      'Vetted Startup Pipeline & Pitch Decks',
+      'Syndicate Co-Investment Opportunities',
+      'Founder Due Diligence & Metrics Rooms',
+      'Closed-Door Investor Roundtables',
+      'Secondary Market & Exit Networking',
+      'Strategic Advisory Board Placements',
+    ],
+  },
+};
+
+export const DIVISIONS_LIST = Object.values(DIVISIONS_CATALOG);
+
+/**
+ * Curated authentic, relatable high-resolution Unsplash photography
+ * specifically matching each division's real-world environment and persona.
+ */
+export const DIVISION_PERSONA_IMAGES: Record<DivisionSlug, string> = {
+  student: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+  career: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+  freelancer: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80',
+  entrepreneur: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80',
+  business: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
+  influencer: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80',
+  investor: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+};
+
+
+export interface NetworkModuleData {
+  id: string;
+  title: string;
+  desc: string;
+  image: string;
+  capabilities: string[];
+  workflow: string[];
+  action: string;
+}
+
+export const NETWORK_TOOLKIT_MODULES: Record<DivisionSlug, NetworkModuleData[]> = {
+  student: [
+    {
+      id: 'mod-1',
+      title: 'Verified Student Job & Internship Board',
+      desc: 'Curated entry-level roles, summer research fellowships, and funded tech internships with stipends up to ₹45,000/mo.',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Zero unpaid ghost roles guarantee',
+        'Fast-track referral loops with partner startups',
+        'Stipend escrow and academic credit verification',
+      ],
+      workflow: ['Upload resume or Github link', 'One-click apply to vetted tech roles', 'Direct interview invitations'],
+      action: 'Explore Internships',
+    },
+    {
+      id: 'mod-2',
+      title: 'National Student Hackathons & AI Challenges',
+      desc: 'Join 36-hour national college hackathons with ₹5 Lakh+ prize pool, cloud sponsor credits, and recruiter fast-tracks.',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Pre-formed team squads and discord rooms',
+        'Complimentary cloud credits & API keys',
+        'Live demos in front of top VC angels',
+      ],
+      workflow: ['Register student squad', 'Receive hackathon problem statement', 'Submit working demo and win grants'],
+      action: 'Browse Hackathons',
+    },
+    {
+      id: 'mod-3',
+      title: 'Senior Alumni & Career Mentorship Circles',
+      desc: 'Book free 30-minute 1-on-1 resume reviews and career navigation sessions with working professionals in Tier-1 firms.',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Direct pairing with engineers at Google, Microsoft, Swiggy',
+        'System design and coding interview mock reviews',
+        'Career pathing and grad school guidance',
+      ],
+      workflow: ['Choose mentor domain', 'Select free calendar slot', 'Join 30-minute 1-on-1 video call'],
+      action: 'Find a Mentor',
+    },
+    {
+      id: 'mod-4',
+      title: 'Free Student Network Membership Guarantee',
+      desc: 'As per eongrow founding charter, student membership is 100% free forever. Pay only for optional paid summit passes.',
+      image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Zero membership charges forever',
+        'Free access to deep-tech courses and community modules',
+        'Student affiliate ambassador earning eligibility',
+      ],
+      workflow: ['Sign in with campus email', 'Instant verified student activation', 'Lifetime free access guarantee'],
+      action: 'View Student Charter',
+    },
+  ],
+  career: [
+    {
+      id: 'mod-1',
+      title: 'Confidential Lateral Job Referrals',
+      desc: 'Direct internal referrals into Tier-1 product companies and executive roles across Bangalore, Hyderabad & NCR.',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Blind candidate profiling for total confidentiality',
+        'Direct submission to VP and Director-level hiring loops',
+        'Executive compensation benchmark data (₹25L - ₹80L+ CTC)',
+      ],
+      workflow: ['Configure confidential visibility', 'Select target target firms & salary bracket', 'Warm referral intro by peer'],
+      action: 'View Referrals',
+    },
+    {
+      id: 'mod-2',
+      title: 'Executive Masterclasses & Leadership Circles',
+      desc: 'Monthly masterclasses with CTOs, VPs, and Fortune 500 leaders on scaling teams and executive presence.',
+      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Closed-door case study tear-downs',
+        'Engineering leadership and VP transition frameworks',
+        'Interactive Q&A and private networking circles',
+      ],
+      workflow: ['Claim member masterclass pass', 'Access prep deck and case study', 'Attend live executive masterclass'],
+      action: 'Register Masterclass',
+    },
+    {
+      id: 'mod-3',
+      title: 'Verified Professional Networking Directory',
+      desc: 'Connect with senior engineering managers, product leads, and management consultants across industries.',
+      image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'LinkedIn and corporate email verified badges',
+        'Domain tags: SaaS, FinTech, AI, HealthTech, DeepTech',
+        'Direct introduction requests via chapter leads',
+      ],
+      workflow: ['Filter by city, title, or company', 'Review verified credentials and career bio', 'Request confidential intro'],
+      action: 'Discover Professionals',
+    },
+  ],
+  freelancer: [
+    {
+      id: 'mod-1',
+      title: 'High-Value Client Project Marketplace',
+      desc: 'Bid on verified design, engineering, copywriting, and marketing projects with 100% secured escrows.',
+      image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        '100% project milestone escrow protection',
+        'Zero platform commission cuts on private contracts',
+        'Verified enterprise and founder client briefs',
+      ],
+      workflow: ['Browse client project briefs', 'Submit tailored proposal & portfolio link', 'Escrow locked before kickoff'],
+      action: 'Explore Client Gigs',
+    },
+    {
+      id: 'mod-2',
+      title: 'Interactive Portfolio & Case Study Showcase',
+      desc: 'Showcase your best case studies, Figma designs, and GitHub projects to business owners and marketing directors.',
+      image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Embed Figma prototypes, live URLs, and GitHub repos',
+        'Verified peer testimonials and rating badges',
+        'Inbound direct enquiry form attached to your profile',
+      ],
+      workflow: ['Build interactive case studies', 'Link client outcomes and ROI metrics', 'Receive direct client DMs'],
+      action: 'Showcase Portfolio',
+    },
+    {
+      id: 'mod-3',
+      title: 'Freelancer Squads & Subcontracting',
+      desc: 'Team up with other specialists to take on enterprise contracts beyond individual bandwidth.',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Squad creation with split-payout escrow agreements',
+        'Cross-discipline pairing (e.g. Designer + Engineer + Marketer)',
+        'Pitch collectively to enterprise accounts',
+      ],
+      workflow: ['Create or join a specialized squad', 'Pool domain expertise into one proposal', 'Deliver enterprise engagements'],
+      action: 'Find Collaborators',
+    },
+  ],
+  entrepreneur: [
+    {
+      id: 'mod-1',
+      title: 'Smart Co-Founder Discovery Matchmaker',
+      desc: 'Find business or technical co-founders with complementary skill sets, shared equity expectations, and commitment.',
+      image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Complementary skill matching (Tech vs. GTM vs. Ops)',
+        'Standardized equity split & vesting agreement templates',
+        'Verified background checks and previous exits',
+      ],
+      workflow: ['Define venture thesis & required co-founder traits', 'Auto-matched with verified candidates', 'Book private alignment dinner'],
+      action: 'Search Co-Founders',
+    },
+    {
+      id: 'mod-2',
+      title: 'Closed-Door Pitch Days & Demo Lounges',
+      desc: 'Present your pitch deck directly to angel syndicates and institutional venture funds.',
+      image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Direct stage time in front of active seed investors',
+        'Pre-screened room: zero non-accredited observers',
+        'Same-day term sheet & syndicate syndicate notes',
+      ],
+      workflow: ['Submit pitch deck and metrics', 'Screening review by investment committee', 'Present live at demo day'],
+      action: 'Pitch at Demo Days',
+    },
+    {
+      id: 'mod-3',
+      title: '$50,000+ eongrow Startup Perks & Credits',
+      desc: 'Exclusive cloud hosting credits, legal incorporation toolkits, and banking discounts for registered founders.',
+      image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'AWS / GCP / Azure cloud credits up to $25k',
+        'Stripe processing fee waivers & Notion for Startups',
+        'Discounted corporate banking and legal incorporation',
+      ],
+      workflow: ['Verify registered venture status', 'Claim promotional vouchers and API keys', 'Deploy infrastructure cost-free'],
+      action: 'Claim Perks',
+    },
+  ],
+  business: [
+    {
+      id: 'mod-1',
+      title: 'B2B Buyer & Supplier Directory',
+      desc: 'Verified vendors, OEMs, distributors, and bulk raw material suppliers across industrial clusters.',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'GSTIN and MCA verified corporate business profiles',
+        'Clustered by industrial hubs: Pune, Surat, NCR, Peenya',
+        'Direct procurement inquiries and RFQs',
+      ],
+      workflow: ['Search by industry, capability, or raw material', 'Review audited factory & turnover credentials', 'Send direct RFQ'],
+      action: 'Browse Vendors',
+    },
+    {
+      id: 'mod-2',
+      title: 'Tender & Business Requirements Board',
+      desc: 'Post commercial procurement tenders and receive vetted proposals from regional partners.',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Procurement tenders from ₹5 Lakh to ₹50 Crore+',
+        'Pre-screened bidder qualifications & delivery track records',
+        'Commercial dispute resolution and contract mediation',
+      ],
+      workflow: ['Post commercial RFP or material requirement', 'Receive vetted quotes from certified suppliers', 'Finalize supply contract'],
+      action: 'View Requirements',
+    },
+    {
+      id: 'mod-3',
+      title: 'High-Level Chapter Trade Delegations',
+      desc: 'Participate in inter-city business expos, networking dinners, and commercial delegation summits.',
+      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Cross-state buyer-seller meetups',
+        'Private executive dining with chamber presidents',
+        'Exhibition booth discounts at national expos',
+      ],
+      workflow: ['Register for chapter trade summit', 'Receive curated 1-on-1 B2B meeting schedule', 'Execute strategic partnerships'],
+      action: 'Chapter Events',
+    },
+  ],
+  influencer: [
+    {
+      id: 'mod-1',
+      title: 'Direct Brand Campaign Briefs',
+      desc: 'Sponsorship offers and PR campaigns with verified budgets and upfront payment commitments.',
+      image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        '100% upfront brand escrow protection',
+        'Pre-negotiated usage rights and contract terms',
+        'Direct communications with brand marketing heads',
+      ],
+      workflow: ['Review active brand briefs and target niches', 'Submit rate card and content angle', 'Deliver campaign and receive funds'],
+      action: 'Brand Campaigns',
+    },
+    {
+      id: 'mod-2',
+      title: 'Verified Media Kit & Analytics Engine',
+      desc: 'Link your YouTube, Instagram, and LinkedIn stats to showcase verified audience engagement to sponsors.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Live API data on subscriber engagement & demographics',
+        'eongrow Verified Creator Trust Badge',
+        'One-click shareable media kit link for sponsor decks',
+      ],
+      workflow: ['Connect social media analytics channels', 'Auto-generate audited performance metrics', 'Share verified link with brands'],
+      action: 'Update Media Kit',
+    },
+    {
+      id: 'mod-3',
+      title: 'Creator Collaboration Meetups',
+      desc: 'Co-produce podcasts, joint live-streams, and collaborative video content with fellow creators.',
+      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Cross-creator studio sessions in major cities',
+        'Audience cross-pollination and joint productions',
+        'Access to discounted production gear and studios',
+      ],
+      workflow: ['Discover creators in complementary niches', 'Propose collaborative video or podcast topic', 'Record and co-distribute'],
+      action: 'Creator Network',
+    },
+  ],
+  investor: [
+    {
+      id: 'mod-1',
+      title: 'Vetted Startup Pipeline & Pitch Decks',
+      desc: 'Access pre-screened early-stage startups with traction, verified unit economics, and audited cap tables.',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Pre-vetted deal flow filtered by industry, ARR, and stage',
+        'Standardized 1-page investment memos & data rooms',
+        'Audited financial metrics and founder background checks',
+      ],
+      workflow: ['Browse curated dealflow with verified metrics', 'Request confidential data room access', 'Schedule private founder pitch'],
+      action: 'Access Dealflow',
+    },
+    {
+      id: 'mod-2',
+      title: 'Private VIP Investor Conclaves',
+      desc: 'Exclusive closed-door roundtables and angel syndicate dinners across Bangalore, Mumbai, and Delhi.',
+      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Strictly accredited investors & fund GPs only',
+        'Co-syndication and secondary liquidity discussions',
+        'Direct LP introductions and fund formation advisory',
+      ],
+      workflow: ['Claim exclusive VIP summit pass', 'RSVP for private syndicate dinner', 'Execute co-investment allocations'],
+      action: 'Investor Conclaves',
+    },
+    {
+      id: 'mod-3',
+      title: 'Cap Table & Legal Escrow Infrastructure',
+      desc: 'Standardized SAFE, convertible note, and shareholder agreement generation with digital signing.',
+      image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80',
+      capabilities: [
+        'Compliant Indian & cross-border investment instruments',
+        'Automated cap table and dilution modeling',
+        'Direct legal partner facilitation for fast closings',
+      ],
+      workflow: ['Select investment instrument template', 'Digital signing by all parties', 'Capital transfer via institutional escrow'],
+      action: 'Legal Escrow',
+    },
+  ],
+};
